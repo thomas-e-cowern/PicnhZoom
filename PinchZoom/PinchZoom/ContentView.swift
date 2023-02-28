@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image("thumb-magazine-back-cover")
+            Image("magazine-back-cover")
                 .resizable()
                 .scaledToFit()
             Text("Hello, world!")
