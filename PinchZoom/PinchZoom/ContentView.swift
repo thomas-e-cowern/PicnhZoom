@@ -8,17 +8,28 @@
 import SwiftUI
 
 struct ContentView: View {
+    // MARK: - Properties
+    
+    // MARK: - Function
+    
+    // MARK: - Body
     var body: some View {
-        VStack {
-            Image("thumb-magazine-front-cover")
-                .resizable()
-                .scaledToFit()
-            Text("Hello, world!")
+        NavigationStack {
+            ZStack {
+                Image("magazine-front-cover")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .cornerRadius(10)
+                    .padding()
+                    .shadow(color: .black.opacity(0.7), radius: 12, x: 2, y: 2)
+            } //: End of ZStack
+            .navigationTitle("Pinch and Zoom")
+            .navigationBarTitleDisplayMode(.inline)
         }
-        .padding()
     }
 }
 
+// MARK: - Preview
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
