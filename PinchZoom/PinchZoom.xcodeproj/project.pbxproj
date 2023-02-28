@@ -11,6 +11,8 @@
 		4D8C47A829AE3C2D00FAC98C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8C47A729AE3C2D00FAC98C /* ContentView.swift */; };
 		4D8C47AA29AE3C2F00FAC98C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D8C47A929AE3C2F00FAC98C /* Assets.xcassets */; };
 		4D8C47AD29AE3C2F00FAC98C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D8C47AC29AE3C2F00FAC98C /* Preview Assets.xcassets */; };
+		4D8C47B629AE421D00FAC98C /* thumb-magazine-front-cover.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4D8C47B429AE421D00FAC98C /* thumb-magazine-front-cover.jpg */; };
+		4D8C47B729AE421D00FAC98C /* thumb-magazine-back-cover.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4D8C47B529AE421D00FAC98C /* thumb-magazine-back-cover.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		4D8C47A729AE3C2D00FAC98C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4D8C47A929AE3C2F00FAC98C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D8C47AC29AE3C2F00FAC98C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4D8C47B429AE421D00FAC98C /* thumb-magazine-front-cover.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "thumb-magazine-front-cover.jpg"; sourceTree = "<group>"; };
+		4D8C47B529AE421D00FAC98C /* thumb-magazine-back-cover.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "thumb-magazine-back-cover.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +55,7 @@
 		4D8C47A429AE3C2D00FAC98C /* PinchZoom */ = {
 			isa = PBXGroup;
 			children = (
+				4D8C47B329AE41F600FAC98C /* Thumbnails */,
 				4D8C47A529AE3C2D00FAC98C /* PinchZoomApp.swift */,
 				4D8C47A729AE3C2D00FAC98C /* ContentView.swift */,
 				4D8C47A929AE3C2F00FAC98C /* Assets.xcassets */,
@@ -65,6 +70,15 @@
 				4D8C47AC29AE3C2F00FAC98C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4D8C47B329AE41F600FAC98C /* Thumbnails */ = {
+			isa = PBXGroup;
+			children = (
+				4D8C47B529AE421D00FAC98C /* thumb-magazine-back-cover.jpg */,
+				4D8C47B429AE421D00FAC98C /* thumb-magazine-front-cover.jpg */,
+			);
+			path = Thumbnails;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +141,8 @@
 			files = (
 				4D8C47AD29AE3C2F00FAC98C /* Preview Assets.xcassets in Resources */,
 				4D8C47AA29AE3C2F00FAC98C /* Assets.xcassets in Resources */,
+				4D8C47B629AE421D00FAC98C /* thumb-magazine-front-cover.jpg in Resources */,
+				4D8C47B729AE421D00FAC98C /* thumb-magazine-back-cover.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
