@@ -44,8 +44,18 @@ struct ContentView: View {
                     .gesture(
                         DragGesture()
                         .onChanged({ value in
-                            withAnimation(.linear(duration: 1)) {
+                            withAnimation(.linear(duration: 0.5)) {
                                 imageOffset = value.translation
+                            }
+                        })
+                        .onEnded({ _ in
+                            if imageScale <= 1 {
+                                withAnimation(.spring()) {
+                                    imageScale = 1
+                                    imageOffset = .zero
+                                }
+                            } else {
+                                /*@START_MENU_TOKEN@*/EmptyView()/*@END_MENU_TOKEN@*/
                             }
                         })
                     )
