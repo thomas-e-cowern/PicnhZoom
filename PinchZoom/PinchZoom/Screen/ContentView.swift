@@ -77,27 +77,24 @@ struct ContentView: View {
                 Group {
                     HStack {
                         // Scale down
-                        Button {
-                            // Scale down
-                        } label: {
-                            Image(systemName: "minus.magnifyingglass")
-                                .font(.system(size: 36))
+//                        Button {
+//                            // Scale down
+//                        } label: {
+//                            Image(systemName: "minus.magnifyingglass")
+//                                .font(.system(size: 36))
+//                        }
+                        ControlImageButton(symbolName: "minus.magnifyingglass") {
+                            // Do something here
                         }
                         
                         // Reset
-                        Button {
-                            // Reset
-                        } label: {
-                            Image(systemName: "arrow.uturn.backward.circle")
-                                .font(.system(size: 36))
+                        ControlImageButton(symbolName: "arrow.uturn.backward.circle") {
+                            // Reset function
                         }
                         
                         // Scale up
-                        Button {
-                            // Scale up
-                        } label: {
-                            Image(systemName: "plus.magnifyingglass")
-                                .font(.system(size: 36))
+                        ControlImageButton(symbolName: "plus.magnifyingglass") {
+                            // Plus the image
                         }
                     }
                 }
