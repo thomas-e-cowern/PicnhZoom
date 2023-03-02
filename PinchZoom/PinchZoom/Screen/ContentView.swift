@@ -77,29 +77,45 @@ struct ContentView: View {
                 Group {
                     HStack {
                         // Scale down
-//                        Button {
-//                            // Scale down
-//                        } label: {
-//                            Image(systemName: "minus.magnifyingglass")
-//                                .font(.system(size: 36))
-//                        }
                         ControlImageButton(symbolName: "minus.magnifyingglass") {
-                            // Do something here
+                            withAnimation(.spring()) {
+                                if imageScale > 1 {
+                                    imageScale -= 1
+                                    
+                                    if imageScale <= 1 {
+                                        restImageState()
+                                    }
+                                }
+                            }
                         }
                         
                         // Reset
-                        ControlImageButton(symbolName: "arrow.uturn.backward.circle") {
-                            // Reset function
+                        ControlImageButton(symbolName: "arrow.up.left.and.down.right.magnifyingglass") {
+                            withAnimation(.spring()) {
+                                restImageState()
+                            }
                         }
                         
                         // Scale up
                         ControlImageButton(symbolName: "plus.magnifyingglass") {
-                            // Plus the image
+                            withAnimation(.spring()) {
+                                if imageScale < 5 {
+                                    imageScale += 1
+                                    
+                                    if imageScale > 5 {
+                                        imageScale = 5
+                                    }
+                                }
+                            }
                         }
                     }
-                }
+                    .padding(EdgeInsets(top: 12, leading: 10, bottom: 12, trailing: 20))
+                    .background(.ultraThinMaterial)
+                    .cornerRadius(20)
+                    .opacity(isAnimating ? 1 : 0)
+                } // MARK: End of group
                     .padding(.bottom, 30)
-                , alignment: .bottom
+                    , alignment: .bottom
             )
         }
     }

@@ -27,5 +27,8 @@ struct ControlImageButton_Previews: PreviewProvider {
         ControlImageButton(symbolName: "arrow.uturn.backward.circle") {
             print("Button Clicked")
         }
+        .preferredColorScheme(.dark)
+        .previewLayout(.sizeThatFits)
+        .padding()
     }
 }
