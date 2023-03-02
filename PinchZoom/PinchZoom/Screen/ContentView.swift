@@ -68,8 +68,42 @@ struct ContentView: View {
             .onAppear {
                 isAnimating = true
             }
+            
             // MARK: Info Panel
             .overlay(InfoPanelView(scale: imageScale, offset: imageOffset).padding(.horizontal).padding(.top, 30), alignment: .top)
+            
+            // MARK: Controls
+            .overlay(
+                Group {
+                    HStack {
+                        // Scale down
+                        Button {
+                            // Scale down
+                        } label: {
+                            Image(systemName: "minus.magnifyingglass")
+                                .font(.system(size: 36))
+                        }
+                        
+                        // Reset
+                        Button {
+                            // Reset
+                        } label: {
+                            Image(systemName: "arrow.uturn.backward.circle")
+                                .font(.system(size: 36))
+                        }
+                        
+                        // Scale up
+                        Button {
+                            // Scale up
+                        } label: {
+                            Image(systemName: "plus.magnifyingglass")
+                                .font(.system(size: 36))
+                        }
+                    }
+                }
+                    .padding(.bottom, 30)
+                , alignment: .bottom
+            )
         }
     }
 }
