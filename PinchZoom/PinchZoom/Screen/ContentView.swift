@@ -68,8 +68,55 @@ struct ContentView: View {
             .onAppear {
                 isAnimating = true
             }
+            
             // MARK: Info Panel
             .overlay(InfoPanelView(scale: imageScale, offset: imageOffset).padding(.horizontal).padding(.top, 30), alignment: .top)
+            
+            // MARK: Controls
+            .overlay(
+                Group {
+                    HStack {
+                        // Scale down
+                        ControlImageButton(symbolName: "minus.magnifyingglass") {
+                            withAnimation(.spring()) {
+                                if imageScale > 1 {
+                                    imageScale -= 1
+                                    
+                                    if imageScale <= 1 {
+                                        restImageState()
+                                    }
+                                }
+                            }
+                        }
+                        
+                        // Reset
+                        ControlImageButton(symbolName: "arrow.up.left.and.down.right.magnifyingglass") {
+                            withAnimation(.spring()) {
+                                restImageState()
+                            }
+                        }
+                        
+                        // Scale up
+                        ControlImageButton(symbolName: "plus.magnifyingglass") {
+                            withAnimation(.spring()) {
+                                if imageScale < 5 {
+                                    imageScale += 1
+                                    
+                                    if imageScale > 5 {
+                                        imageScale = 5
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .padding(EdgeInsets(top: 12, leading: 10, bottom: 12, trailing: 20))
+                    .background(.ultraThinMaterial)
+                    .cornerRadius(20)
+                    .opacity(isAnimating ? 1 : 0)
+                } // MARK: End of group
+                    .padding(.bottom, 30)
+                    , alignment: .bottom
+            )
         }
     }
 }
