@@ -11,8 +11,15 @@ struct ContentView: View {
     // MARK: - Properties
     @State private var isAnimating: Bool = false
     @State private var imageScale: CGFloat = 1
+    @State private var imageOffset:CGSize = .zero
     
-    // MARK: - Function
+    // MARK: - Reset Function
+    func restImageState () {
+        withAnimation(.spring()) {
+            imageScale = 1
+            imageOffset = .zero
+        }
+    }
     
     // MARK: - Body
     var body: some View {
@@ -25,6 +32,7 @@ struct ContentView: View {
                     .padding()
                     .shadow(color: .black.opacity(0.7), radius: 12, x: 2, y: 2)
                     .opacity(isAnimating ? 1 : 0)
+                    .offset(x: imageOffset.width, y: imageOffset.height)
                     .animation(.linear(duration: 1), value: isAnimating)
                     .scaleEffect(imageScale)
                 // MARK: Tap Gesture
@@ -34,11 +42,23 @@ struct ContentView: View {
                                 imageScale = 5
                             }
                         } else {
-                            withAnimation(.spring()) {
-                                imageScale = 1
-                            }
+                           restImageState()
                         }
                     })
+                // MARK: Drag Gesture
+                    .gesture(
+                        DragGesture()
+                        .onChanged({ value in
+                            withAnimation(.linear(duration: 0.5)) {
+                                imageOffset = value.translation
+                            }
+                        })
+                        .onEnded({ _ in
+                            if imageScale <= 1 {
+                                restImageState()
+                            }
+                        })
+                    )
             } //: End of ZStack
             .navigationTitle("Pinch and Zoom")
             .navigationBarTitleDisplayMode(.inline)
