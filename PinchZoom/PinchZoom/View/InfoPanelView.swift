@@ -41,6 +41,13 @@ struct InfoPanelView: View {
                 
                 Spacer()
             }
+            .font(.footnote)
+            .padding(8)
+            .background(.ultraThinMaterial)
+            .cornerRadius(8)
+            .frame(maxWidth: 420)
+            
+            Spacer()
         }
     }
 }
