@@ -51,8 +51,9 @@
 		4D8C47A429AE3C2D00FAC98C /* PinchZoom */ = {
 			isa = PBXGroup;
 			children = (
+				4D8C47C129B0E09B00FAC98C /* View */,
+				4D8C47C029B0E07800FAC98C /* Screen */,
 				4D8C47A529AE3C2D00FAC98C /* PinchZoomApp.swift */,
-				4D8C47A729AE3C2D00FAC98C /* ContentView.swift */,
 				4D8C47A929AE3C2F00FAC98C /* Assets.xcassets */,
 				4D8C47AB29AE3C2F00FAC98C /* Preview Content */,
 			);
@@ -65,6 +66,21 @@
 				4D8C47AC29AE3C2F00FAC98C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4D8C47C029B0E07800FAC98C /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				4D8C47A729AE3C2D00FAC98C /* ContentView.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		4D8C47C129B0E09B00FAC98C /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
