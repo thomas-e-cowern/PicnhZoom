@@ -133,8 +133,20 @@ struct ContentView: View {
                 } // MARK: End of group
                     .padding(.bottom, 30)
                     , alignment: .bottom
+                // MARK: Drawer
+                    
             )
-        }
+            // MARK: Drawer
+            .overlay(HStack(spacing: 12, content: {
+                Image(systemName: "chevron.compact.left")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: 40)
+                    .padding(8)
+                    .foregroundStyle(.secondary)
+                
+            }))
+        }  // MARK: End of Navigation Stack
     }
 }
 
