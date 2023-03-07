@@ -11,7 +11,8 @@ struct ContentView: View {
     // MARK: - Properties
     @State private var isAnimating: Bool = false
     @State private var imageScale: CGFloat = 1
-    @State private var imageOffset:CGSize = .zero
+    @State private var imageOffset: CGSize = .zero
+    @State private var isDrawerOpen: Bool = false
     
     // MARK: - Reset Function
     func restImageState () {
@@ -144,6 +145,11 @@ struct ContentView: View {
                     .frame(height: 40)
                     .padding(8)
                     .foregroundStyle(.secondary)
+                    .onTapGesture {
+                        withAnimation(.easeOut) {
+                            isDrawerOpen.toggle()
+                        }
+                    }
                 Spacer()
             } // MARK: Drawer
                 .padding(EdgeInsets(top: 16, leading: 8, bottom: 16, trailing: 8))
@@ -152,6 +158,7 @@ struct ContentView: View {
                 .opacity(isAnimating ? 1 : 0)
                 .frame(width: 260)
                 .padding(.top, UIScreen.main.bounds.height / 12)
+                .offset(x: isDrawerOpen ? 20 : 215)
                 , alignment: .topTrailing
             )
         }  // MARK: End of Navigation Stack
